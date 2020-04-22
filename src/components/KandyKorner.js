@@ -4,6 +4,8 @@ import LocationList from "./locations/LocationList"
 import "./KandyKorner.css"
 import { ProductProvider } from "./products/ProductProvider"
 import ProductList from "./products/ProductList"
+import { EmployeeProvider } from "./employees/EmployeeProvider"
+import EmployeeList from "./employees/EmployeeList"
 
 export default () => (
     <>
@@ -18,5 +20,10 @@ export default () => (
         <ProductProvider>
             <ProductList />
         </ProductProvider>
+
+        <h2>Our Team</h2>
+        <EmployeeProvider>
+            <EmployeeList />
+        </EmployeeProvider>
     </>
 )
