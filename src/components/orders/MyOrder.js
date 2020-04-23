@@ -1,7 +1,7 @@
 import React from "react"
 import { useContext } from "react"
 import { OrderContext } from "./CustomerCandyProvider"
-import { ListGroup, ListGroupItem } from "reactstrap"
+import { Table } from "reactstrap"
 
 
 export default () => {
@@ -13,20 +13,31 @@ export default () => {
     const currentUserOrders = orders.filter(order => order.customerId === currentUserId)
     return (
         <div className="orders">
-            <table>
+            <Table>
+                <thead>
+                    <tr>
+                        <td>Item</td>
+                        <td>Price</td>
+                    </tr>
+                </thead>
+                <tbody>
             {
                 currentUserOrders.map(order => {
                     // return (<ListGroup horizontal key={"order_"+order.id}>
                     //     <ListGroupItem key={"order_"+order.id+"_name"}>{order.product.name}</ListGroupItem>
                     //     <ListGroupItem key={"order_"+order.id+"_price"}>{order.product.price}</ListGroupItem>
                     // </ListGroup>)
-                    return (<tr>
+                    return (
+                    
+                    <tr key={"order_"+order.id}>
                     <td>{order.product.name}</td>
                     <td>{order.product.price}</td>
-                </tr>)
+                    </tr>
+                    )
                 })
             }
-            </table>
+            </tbody>
+            </Table>
         </div>
     )
 }
