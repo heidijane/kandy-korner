@@ -27,7 +27,6 @@ export default props => {
                 isFullTime: isFullTime.current.value !== "0" ? true : false,
                 hourlyRate: parsedHourlyRate
             }
-            console.log(newEmployeeObj)
             addEmployee(newEmployeeObj)
             .then(props.toggler) //close the modal
         }
