@@ -7,12 +7,12 @@ button,
 input,
 select,
 textarea {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Open Sans', sans-serif;
     color: rebeccapurple;
-    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 1.5;
 }
+
 body {
     background-color: lavenderblush;
 }
