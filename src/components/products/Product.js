@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { Button } from "reactstrap"
-import { OrderContext } from "../../orders/CustomerCandyProvider"
+import { OrderContext } from "../orders/CustomerCandyProvider"
 
 export default ({product}) => {
     const { addOrder } = useContext(OrderContext)

@@ -6,7 +6,8 @@ import { ProductProvider } from "./products/ProductProvider"
 import ProductList from "./products/ProductList"
 import { EmployeeProvider } from "./employees/EmployeeProvider"
 import EmployeeList from "./employees/EmployeeList"
-import { OrderProvider } from "../orders/CustomerCandyProvider"
+import { OrderProvider } from "./orders/CustomerCandyProvider"
+import ViewOrderButton from "./orders/ViewOrderButton"
 
 export default () => (
     <>
@@ -15,6 +16,7 @@ export default () => (
                 <EmployeeProvider>
                     <OrderProvider>
 
+                        <ViewOrderButton />
                         <h2>Our Locations</h2>
                         <LocationList />
                         <h2>Our Products</h2>

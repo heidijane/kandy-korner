@@ -13,7 +13,7 @@ export const OrderProvider = (props) => {
     const [orders, setOrders] = useState([])
 
     const getOrders = () => {
-        return fetch("http://localhost:8088/customerCandy")
+        return fetch("http://localhost:8088/customerCandy?_expand=product")
             .then(res => res.json())
             .then(setOrders)
     }
