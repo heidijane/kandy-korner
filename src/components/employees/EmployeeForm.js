@@ -15,8 +15,7 @@ export default props => {
 
     const constructNewEmployee = () => {
         const locationId = parseInt(location.current.value)
-        console.log(hourlyRate.current.value)
-        const parsedHourlyRate = parseInt(hourlyRate.current.value)
+        const parsedHourlyRate = parseFloat(hourlyRate.current.value)
 
         if (locationId === 0) {
             window.alert("Please select a location")
@@ -100,8 +99,9 @@ export default props => {
                 </div>
             </fieldset>
             <fieldset>
-                <label htmlFor="employeePay">Hourly Pay Rate: </label>
-                <InputGroup>
+                <div className="form-group">
+                    <label htmlFor="employeePay">Hourly Pay Rate: </label>
+                    <InputGroup>
                     <InputGroupAddon addonType="prepend">
                         <InputGroupText>$</InputGroupText>
                     </InputGroupAddon>
@@ -112,12 +112,14 @@ export default props => {
                         step=".25"
                         min="7.25"
                         max="30"
-                        ref={hourlyRate}
+                        // Note for future me: the "innerRef" is important! It's how you get things out of reactstrap components
+                        innerRef={hourlyRate}
                         required
                         className="form-control"
                         placeholder="Employee's Hourly Pay Rate"
                     />
-                </InputGroup>
+                    </InputGroup>
+                </div>
             </fieldset>
             <button type="submit"
                 onClick={

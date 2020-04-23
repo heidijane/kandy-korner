@@ -1,5 +1,6 @@
 .employees {
  display: flex;
+ flex-wrap: wrap;
 }
 
 .employee {
