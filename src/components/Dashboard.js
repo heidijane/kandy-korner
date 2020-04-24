@@ -8,6 +8,8 @@ import { EmployeeProvider } from "./employees/EmployeeProvider"
 import EmployeeList from "./employees/EmployeeList"
 import { OrderProvider } from "./orders/CustomerCandyProvider"
 import ViewOrderButton from "./orders/ViewOrderButton"
+import CustomerList from "./customers/CustomerList"
+import { CustomerProvider } from "./customers/CustomerProvider"
 
 export default () => (
     <>
@@ -15,15 +17,19 @@ export default () => (
             <ProductProvider>
                 <EmployeeProvider>
                     <OrderProvider>
+                        <CustomerProvider>
 
-                        <ViewOrderButton />
-                        <h2>Our Locations</h2>
-                        <LocationList />
-                        <h2>Our Products</h2>
-                        <ProductList />
-                        <h2>Our Team</h2>
-                        <EmployeeList />
+                            <ViewOrderButton />
+                            <h2>Our Locations</h2>
+                            <LocationList />
+                            <h2>Our Products</h2>
+                            <ProductList />
+                            <h2>Our Team</h2>
+                            <EmployeeList />
+                            <h2>Our Customers</h2>
+                            <CustomerList />
 
+                        </CustomerProvider>
                     </OrderProvider>
                 </EmployeeProvider>
             </ProductProvider>
