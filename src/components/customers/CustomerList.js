@@ -12,7 +12,10 @@ export default () => {
     customers.forEach(customer => {
         const filteredOrders = orders.filter(order => order.customerId === customer.id)
         customer.numCandyOrdered = filteredOrders.length
-    }) 
+    })
+
+    //sort the customers by the amount that they have ordered in descending order
+    const sortedCustomers = customers.sort((a, b) => (a.numCandyOrdered < b.numCandyOrdered) ? 1 : -1)
 
     return (
         <div className="customers">
@@ -25,7 +28,7 @@ export default () => {
                 </thead>
                 <tbody>
                     {
-                        customers.map(customer => {
+                        sortedCustomers.map(customer => {
                             return (
                             <tr key={"customer_"+customer.id}>
                             <td>{customer.name}</td>
