@@ -2,9 +2,17 @@ import React, { useContext } from "react"
 import { CustomerContext } from "./CustomerProvider"
 import "./Customers.css"
 import { Table } from "reactstrap"
+import { OrderContext } from "../orders/CustomerCandyProvider"
 
 export default () => {
     const { customers } = useContext(CustomerContext)
+    const { orders } = useContext(OrderContext)
+
+    //get how many candies each customer has ordered
+    customers.forEach(customer => {
+        const filteredOrders = orders.filter(order => order.customerId === customer.id)
+        customer.numCandyOrdered = filteredOrders.length
+    }) 
 
     return (
         <div className="customers">
@@ -21,7 +29,7 @@ export default () => {
                             return (
                             <tr key={"customer_"+customer.id}>
                             <td>{customer.name}</td>
-                            <td>0</td>
+                            <td>{customer.numCandyOrdered}</td>
                             </tr>
                             )
                         })
