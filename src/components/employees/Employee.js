@@ -1,11 +1,15 @@
 import React from "react"
+import {Card, CardHeader, CardBody, CardText, CardFooter} from "reactstrap"
 
 export default ({employee}) => (
-    <section className="employee">
-        <h3 className="employee__name">{employee.name}</h3>
-        <p className="employee__location">{employee.location.name}</p>
-        <p className="employee__manager">Management: {employee.isManager === true ? "yes" : "no"}</p>
-        <p className="employee__fullTime">{employee.isFullTime === true ? "Full-Time" : "Part-Time"}</p>
-<p className="employee__payrate">${new Intl.NumberFormat().format(employee.hourlyRate)} per hour</p>
-    </section>
+    <Card className="employee">
+        <CardHeader className="employee__name"><h3>{employee.name}</h3></CardHeader>
+        <CardBody>
+            <CardText>{employee.location.name}</CardText>
+            <CardText>Management: {employee.isManager === true ? "yes" : "no"}</CardText>
+            <CardText>{employee.isFullTime === true ? "Full-Time" : "Part-Time"}</CardText>
+            <CardText>${new Intl.NumberFormat().format(employee.hourlyRate)} per hour</CardText>
+        </CardBody>
+        <CardFooter></CardFooter>
+    </Card>
 )

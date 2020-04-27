@@ -4,8 +4,6 @@
 }
 
 .employee {
-    border: double 5px plum;
     margin: 0 1em 1em 0;
-    padding: 1em;
     background-color: thistle;
 }
